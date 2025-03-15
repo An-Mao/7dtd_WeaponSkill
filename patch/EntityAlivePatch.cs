@@ -25,9 +25,12 @@ namespace NWS_WeaponSkill.patch {
             if (__instance != null && _dmResponse.Source != null) {
                 ItemClass item = _dmResponse.Source.ItemClass;
                 if (item != null && item.HasAnyTags(WeaponTags.plusTags)) {
+                    /*
+                    item.Properties.GetFloat()
                     double addDamage = 0.01 + (__instance.GetMaxHealth() % 10) / 100;
-                    addDamage = addDamage > 0.5 ? 0.5 : addDamage;
-                    _dmResponse.Strength += (int)(__instance.GetMaxHealth() * addDamage);
+                    addDamage = addDamage > 0.1 ? 0.1 : addDamage;
+                    */
+                    _dmResponse.Strength += (int)(__instance.GetMaxHealth() * item.Properties.GetFloat("DamageFix"));
                     /*
                     var package = NetPackageManager.GetPackage<NetPackageParticleEffect>().Setup(
                         new ParticleEffect("p_sparks_fuse", __instance.position,new Quaternion() ,15.0f, Color.blue),

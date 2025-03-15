@@ -60,7 +60,9 @@
     <Compile Include="patch\EntityAlivePatch.cs" />
     <Compile Include="patch\GameManagerPatch.cs" />
     <Compile Include="patch\ItemActionThrownWeaponPatch.cs" />
+    <Compile Include="patch\ThrownWeaponMoveScriptPatch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ThrowingScript.cs" />
     <Compile Include="WeaponTags.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
